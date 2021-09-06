@@ -20,7 +20,7 @@ public class task {
       System.out.println("Here are the tasks in your list:");
         for(int ay=0;ay<namelist.size();ay++){
             System.out.println((ay+1)+". ["+statelist.get(ay)+"]"
-            +"["+donelist.get(ay)+"] "+namelist.get(ay));
+            +"["+donelist.get(ay)+"]"+namelist.get(ay));
         }
     }
     public void setList(int mark){
@@ -28,7 +28,7 @@ public class task {
         donelist.set(this.mark, MARK_AS_DONE);
         System.out.println("Nice! I've marked this task as done: ");
         System.out.println((this.mark+1)+". ["+statelist.get(this.mark)+"]"
-        +"["+donelist.get(this.mark)+"] "+namelist.get(this.mark));
+        +"["+donelist.get(this.mark)+"]"+namelist.get(this.mark));
         
     }
     public void setName(String line){
@@ -39,7 +39,7 @@ public class task {
     public void getTasks(){
         System.out.println("Got it. I've added this task:");
         System.out.println("["+statelist.get(namelist.size()-1)+"]"
-        +"["+donelist.get(namelist.size()-1)+"] "+namelist.get(namelist.size()-1));
+        +"["+donelist.get(namelist.size()-1)+"]"+namelist.get(namelist.size()-1));
         System.out.println("Now you have "+ namelist.size() +" tasks in the list.");
     }
     public void adddeadLine(String description, String by){
@@ -50,11 +50,16 @@ public class task {
         getTasks();
     }
     public void addTodo(String description){
-        toDo todo=new toDo(description);
-        statelist.add('T');
-        donelist.add(' ');
-        namelist.add(todo.toString());
-        getTasks();
+        try{
+            toDo todo=new toDo(description);
+            statelist.add('T');
+            donelist.add(' ');
+            namelist.add(todo.toString());
+            getTasks();
+        }
+        catch(DukeException e){
+            System.out.println("☹ OOPS!!! The description of a todo cannot be empty.");
+        }
     }
     public void addEvent(String description, String by){
         event evenT=new event(description,by);
