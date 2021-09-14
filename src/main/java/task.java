@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class task {
     private int mark;
@@ -34,6 +36,7 @@ public class task {
     public void setName(String line){
         this.line=line;
         donelist.add(' ');
+        statelist.add(' ');
         namelist.add(this.description);
     }
     public void getTasks(){
@@ -51,6 +54,11 @@ public class task {
         donelist.remove(index-1);
         namelist.remove(index-1);
         System.out.println("Now you have "+ namelist.size() +" tasks in the list.");
+        try {
+            saveList();
+        } catch (IOException e) {
+            System.out.println("Something went wrong: " + e.getMessage());
+        }
     }
     public void adddeadLine(String description, String by){
         deadLine ddline=new deadLine(description,by);
@@ -77,5 +85,28 @@ public class task {
         donelist.add(' ');
         namelist.add(evenT.toString());
         getTasks();
+    }
+    private void saveList()throws IOException{
+        //String path = System.getProperty("user.dir");
+        FileWriter fw = new FileWriter("data/duke.txt");
+        for(int ay=0;ay<namelist.size();ay++){
+            int state;
+            if(donelist.get(ay)=='X'){
+                state=1;
+            }
+            else{
+                state=0;
+            }
+            if(namelist.get(ay).indexOf(":")!=-1){
+                fw.write(statelist.get(ay)+" | "
+                +state+" | "+namelist.get(ay).substring(0,namelist.get(ay).indexOf(":")-4)
+                +" |"+namelist.get(ay).substring(namelist.get(ay).indexOf(":")+1,namelist.get(ay).indexOf(")"))+System.lineSeparator());
+            }
+            else{
+                fw.write(statelist.get(ay)+" | "
+                +state+" | "+namelist.get(ay)+System.lineSeparator());
+            }
+        }
+        fw.close();
     }
 }
