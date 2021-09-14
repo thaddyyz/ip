@@ -42,6 +42,16 @@ public class task {
         +"["+donelist.get(namelist.size()-1)+"]"+namelist.get(namelist.size()-1));
         System.out.println("Now you have "+ namelist.size() +" tasks in the list.");
     }
+    public void removeTask(String indexString){
+        int index=Integer.parseInt(indexString);
+        System.out.println("Noted. I've removed this task:");
+        System.out.println("["+statelist.get(index-1)+"]"
+        +"["+donelist.get(index-1)+"]"+namelist.get(index-1));
+        statelist.remove(index-1);
+        donelist.remove(index-1);
+        namelist.remove(index-1);
+        System.out.println("Now you have "+ namelist.size() +" tasks in the list.");
+    }
     public void adddeadLine(String description, String by){
         deadLine ddline=new deadLine(description,by);
         statelist.add('D');

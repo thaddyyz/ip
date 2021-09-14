@@ -34,6 +34,10 @@ public class Duke {
                 int ind=line.indexOf("/at");
                 tk.addEvent(line.substring(5,ind-1),line.substring(ind+4));
             }
+            else if(line.indexOf("delete")!=-1){
+                //int ind=line.indexOf("/at");
+                tk.removeTask(line.substring(7));
+            }
             else{
                 //tk.setName(line);
                 //System.out.println("added: "+line);//no longer enters everything to list
