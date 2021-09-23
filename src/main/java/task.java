@@ -1,6 +1,9 @@
 import java.util.ArrayList;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+import java.io.File;
 
 public class task {
     private int mark;
@@ -86,7 +89,7 @@ public class task {
         namelist.add(evenT.toString());
         getTasks();
     }
-    private void saveList()throws IOException{
+    public void saveList()throws IOException{
         //String path = System.getProperty("user.dir");
         FileWriter fw = new FileWriter("data/duke.txt");
         for(int ay=0;ay<namelist.size();ay++){
@@ -108,5 +111,32 @@ public class task {
             }
         }
         fw.close();
+    }
+    public void readList() throws FileNotFoundException
+    {
+        File myObject = new File("data/duke.txt");
+        Scanner myReader = new Scanner(myObject);
+        while (myReader.hasNextLine()) {
+            String data = myReader.nextLine();
+            statelist.add(data.charAt(0));
+            if(data.charAt(4)=='1'){
+                donelist.add(MARK_AS_DONE);
+            }
+            else{
+                donelist.add(' ');
+            }
+            if(data.charAt(0)=='D'){
+                data=data.substring(8);
+                namelist.add(data.substring(0,data.indexOf("|"))+"by"+data.substring(data.indexOf("|")+1));  
+            }
+            else if(data.charAt(0)=='E'){
+                data=data.substring(8);
+                namelist.add(data.substring(0,data.indexOf("|"))+"at"+data.substring(data.indexOf("|")+1));
+            }
+            else{
+                namelist.add(data.substring(8));  
+            }
+        }
+        myReader.close();
     }
 }
