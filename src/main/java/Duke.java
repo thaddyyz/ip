@@ -1,5 +1,7 @@
 import java.io.FileNotFoundException;
-//import java.util.ArrayList;
+/*
+Duke class is the main class which manages the tasks and the user interface of the program
+*/
 public class Duke {
     private static Ui ui;
     private static Parser ps;

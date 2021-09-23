@@ -1,3 +1,6 @@
+/*
+Parser to search user input for keywords
+*/
 public class Parser {
     public Parser() {
 

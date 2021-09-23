@@ -4,7 +4,9 @@ import java.io.IOException;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.io.File;
-
+/*
+Task encompases all backend functions of the application
+*/
 public class task {
     private int mark;
     private String line,description;
@@ -21,6 +23,9 @@ public class task {
         this.mark=mark;
         this.line=line;
     }
+/*
+getList return all stored content
+*/
     public void getList(){
         System.out.println("Here are the tasks in your list:");
         for(int ay=0;ay<namelist.size();ay++){
@@ -28,6 +33,9 @@ public class task {
             +"["+donelist.get(ay)+"]"+namelist.get(ay));
         }
     }
+/*
+findTask finds and prints all content which contains user input keyphrase/word
+*/
     public void findTask(String line){
         int countfound=0;
         for(int ay=0;ay<namelist.size();ay++){
@@ -38,6 +46,9 @@ public class task {
             } 
         }
     }
+/*
+setList Marks the corresponding task as completed
+*/
     public void setList(int mark){
         this.mark=mark-1;//check
         donelist.set(this.mark, MARK_AS_DONE);
@@ -46,12 +57,18 @@ public class task {
         +"["+donelist.get(this.mark)+"]"+namelist.get(this.mark));
         
     }
+/*
+setName adds undefined input to list
+*/    
     public void setName(String line){
         this.line=line;
         donelist.add(' ');
         statelist.add(' ');
         namelist.add(this.description);
     }
+/*
+getTasks prints completed task
+*/
     public void getTasks(){
         System.out.println("Got it. I've added this task:");
         System.out.println("["+statelist.get(namelist.size()-1)+"]"
@@ -63,6 +80,9 @@ public class task {
             System.out.println("Something went wrong: " + e.getMessage());
         }
     }
+/*
+removeTasks remove task from list
+*/
     public void removeTask(String indexString){
         int index=Integer.parseInt(indexString);
         System.out.println("Noted. I've removed this task:");
@@ -73,6 +93,7 @@ public class task {
         namelist.remove(index-1);
         System.out.println("Now you have "+ namelist.size() +" tasks in the list.");
     }
+//adds deadline
     public void adddeadLine(String description, String by){
         deadLine ddline=new deadLine(description,by);
         statelist.add('D');
@@ -80,6 +101,7 @@ public class task {
         namelist.add(ddline.toString());
         getTasks();
     }
+//adds todo task    
     public void addTodo(String description){
         try{
             toDo todo=new toDo(description);
@@ -92,6 +114,7 @@ public class task {
             System.out.println("☹ OOPS!!! The description of a todo cannot be empty.");
         }
     }
+//adds event
     public void addEvent(String description, String by){
         event evenT=new event(description,by);
         statelist.add('E');
@@ -99,6 +122,7 @@ public class task {
         namelist.add(evenT.toString());
         getTasks();
     }
+//save list to external file
     public void saveList()throws IOException{
         //String path = System.getProperty("user.dir");
         FileWriter fw = new FileWriter("data/duke.txt");
@@ -122,6 +146,7 @@ public class task {
         }
         fw.close();
     }
+//reads and copies list from external file to task's list
     public void readList() throws FileNotFoundException
     {
         File myObject = new File("data/duke.txt");

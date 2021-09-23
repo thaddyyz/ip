@@ -1,3 +1,6 @@
+/*
+event formats input with "event" keyword based on user input
+*/
 public class event extends task{
     protected String by,description;
 
