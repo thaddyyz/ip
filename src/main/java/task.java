@@ -22,10 +22,20 @@ public class task {
         this.line=line;
     }
     public void getList(){
-      System.out.println("Here are the tasks in your list:");
+        System.out.println("Here are the tasks in your list:");
         for(int ay=0;ay<namelist.size();ay++){
             System.out.println((ay+1)+". ["+statelist.get(ay)+"]"
             +"["+donelist.get(ay)+"]"+namelist.get(ay));
+        }
+    }
+    public void findTask(String line){
+        int countfound=0;
+        for(int ay=0;ay<namelist.size();ay++){
+            if(namelist.get(ay).indexOf(line)!=-1){
+                countfound++;
+                System.out.println(countfound+". ["+statelist.get(ay)+"]"
+                +"["+donelist.get(ay)+"]"+namelist.get(ay));
+            } 
         }
     }
     public void setList(int mark){

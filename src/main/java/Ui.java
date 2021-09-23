@@ -22,8 +22,12 @@ public class Ui {
     }
 
     public String readCommand(){
-            Scanner in = new Scanner(System.in);
-            return in.nextLine();
+        Scanner in = new Scanner(System.in);
+        return in.nextLine();
+    }
+
+    public void findWord(){
+        System.out.println("Here are the matching tasks in your list:");
     }
  
 }

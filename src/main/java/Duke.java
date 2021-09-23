@@ -44,6 +44,10 @@ public class Duke {
                 //int ind=line.indexOf("/at");
                 tk.removeTask(line.substring(7));
             }
+            else if(ps.find(line)!=-1){
+                ui.findWord();
+                tk.findTask(line.substring(5));
+            }
             else{
                 ui.unknownError();
             }

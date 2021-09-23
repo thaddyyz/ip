@@ -31,4 +31,8 @@ public class Parser {
         return line.indexOf("event");
     }
 
+    public int find(String line){
+        return line.indexOf("find");
+    }
+
 }
