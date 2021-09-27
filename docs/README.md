@@ -7,7 +7,7 @@ This program is designed to assist user in keeping track with various activities
 This program allows user to input and store various activity types such as todo, event and deadline. Each type comprises of a specific parameter such as time and date for deadline/event type activities.
 
 Example:
-
+```
 todo borrow book
     ____________________________________________________________
      Got it. I've added this task: 
@@ -28,13 +28,13 @@ event project meeting /at Mon 2-4pm
        [E][ ] project meeting (at: Mon 2-4pm)
      Now you have 7 tasks in the list.
     ____________________________________________________________
-
+```
 ### Feature-Mark activities that are completed
 
 Allows user to mark tasks that are completed.
 
 Example:
-
+```
 list
     ____________________________________________________________
      Here are the tasks in your list:
@@ -48,26 +48,26 @@ done 2
      Nice! I've marked this task as done: 
        [D][X] return book (by: Sunday)
     ____________________________________________________________
-
+```
 ### Feature-Delete
 
 Allows user to delete tasks from list.
 
 Example:
-
+```
 delete 3
     ____________________________________________________________
      Noted. I've removed this task: 
        [E][ ] project meeting (at: Aug 6th 2-4pm)
      Now you have 4 tasks in the list.
     ____________________________________________________________
-
+```
 ### Feature-Error Handling
 
 Feedback user on unrecognised inputs.
 
 Example:
-
+```
 todo
     ____________________________________________________________
      ☹ OOPS!!! The description of a todo cannot be empty.
@@ -77,20 +77,20 @@ blah
     ____________________________________________________________
      ☹ OOPS!!! I'm sorry, but I don't know what that means :-(
     ____________________________________________________________
-
+```
 ### Feature-Find activities by keyword
 
 Allows user to find tasks in the list by keyword.
 
 Example:
-
+```
 find book
     ____________________________________________________________
      Here are the matching tasks in your list:
      1.[T][X] read book
      2.[D][X] return book (by: June 6th)
     ____________________________________________________________
-
+```
 ### Feature-Save to File
 
 Program automatically to save list to external file for future reference. Upon initialising program, data from the stored file will be referenced to add to list.
