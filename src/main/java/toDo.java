@@ -1,3 +1,6 @@
+/*
+toDo checks input validity formats it based on user input
+*/
 public class toDo extends task{
     protected String description;
 
