@@ -1,3 +1,4 @@
+package duke;
 import java.io.FileNotFoundException;
 /*
 Duke class is the main class which manages the tasks and the user interface of the program

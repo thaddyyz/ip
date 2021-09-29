@@ -1,3 +1,4 @@
+package duke;
 import java.util.Scanner;
 /*
 Ui reads the users input and prints the responses

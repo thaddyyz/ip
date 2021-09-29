@@ -1,3 +1,4 @@
+package duke;
 /*
 Parser to search user input for keywords
 */

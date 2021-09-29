@@ -1,4 +1,4 @@
-/*
+package duke;/*
 deadLine class formats the message base on user's input
 */
 public class deadLine extends task{

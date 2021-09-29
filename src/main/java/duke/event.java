@@ -1,3 +1,4 @@
+package duke;
 /*
 event formats input with "event" keyword based on user input
 */

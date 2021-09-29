@@ -1,3 +1,5 @@
+package duke;
+
 /*
 toDo checks input validity formats it based on user input
 */
