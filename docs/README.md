@@ -1,8 +1,25 @@
 # User Guide
 This program is designed to assist user in keeping track with various activities similar to a day-planner.
-## Features 
 
-### Feature-Store Specific activity types
+- [Features](#features)
+  - [Add Activities](#add-specific-activity-types)
+  - [Mark Activities](#mark-activities)
+  - [Delete](#delete)
+	- [Error Handling](#error-handling)
+  - [Find](#find-activities-by-keyword)
+  - [Save To File](#save-to-file)
+- [Additional Functions](#additional-functions)
+  - [End Program](#ends-program)
+  - [List Tasks](#list-stored-tasks)
+- [Error Messages](#error-messages)
+- [Archived Data File](#archived-data-file)
+- [Command Summary](#command-summary)
+
+----------------------------------
+
+## <span style="color: Green;">Features</span>
+
+### Add Specific activity types
 
 This program allows user to input and store various activity types such as todo, event and deadline. Each type comprises of a specific parameter such as time and date for deadline/event type activities.
 
@@ -29,7 +46,7 @@ event project meeting /at Mon 2-4pm
      Now you have 7 tasks in the list.
     ____________________________________________________________
 ```
-### Feature-Mark activities that are completed
+### Mark activities
 
 Allows user to mark tasks that are completed.
 
@@ -49,7 +66,7 @@ done 2
        [D][X] return book (by: Sunday)
     ____________________________________________________________
 ```
-### Feature-Delete
+### Delete
 
 Allows user to delete tasks from list.
 
@@ -62,7 +79,7 @@ delete 3
      Now you have 4 tasks in the list.
     ____________________________________________________________
 ```
-### Feature-Error Handling
+### Error Handling
 
 Feedback user on unrecognised inputs.
 
@@ -78,7 +95,7 @@ blah
      ☹ OOPS!!! I'm sorry, but I don't know what that means :-(
     ____________________________________________________________
 ```
-### Feature-Find activities by keyword
+### Find activities by keyword
 
 Allows user to find tasks in the list by keyword.
 
@@ -91,14 +108,14 @@ find book
      2.[D][X] return book (by: June 6th)
     ____________________________________________________________
 ```
-### Feature-Save to File
+### Save to File
 
 Program automatically to save list to external file for future reference. Upon initialising program, data from the stored file will be referenced to add to list.
 Stored file can be found under data folder of project. File named duke.txt
 
-## Usage
+## <span style="color: Green;">Additional Functions</span>
 
-### `bye` - Ends program
+### Ends program
 
 Example of usage: 
 
@@ -112,7 +129,7 @@ Closing message.
 expected output: Bye. Hope to see you again soon!
 ```
 
-### `list` - List stored tasks
+### List stored tasks
 
 Example of usage: 
 
@@ -130,7 +147,7 @@ expected output:
      5.[T][ ] borrow book
 
 ```
-### Error Messages
+## <span style="color: Green;">Error Messages</span>
 
 ```
 ☹ OOPS!!! I'm sorry, but I don't know what that means :-(
@@ -146,3 +163,18 @@ Empty task input, refer to input format to add task.
 File not found
 ```
 This is a warning message and does not affect the operation. Simply ad a new task and the reference file will automatically be created.
+
+## <span style="color: Green;">Archived Data File</span>
+[https://github.com/thaddyyz/ip/releases/tag/v0.2]
+
+## <span style="color: Green;">Command Summary</span>
+| Command | Format | Example |
+| --- | --- | --- |
+| Bye | any input with 'bye' | goodbye |
+| Deadline | deadline (Activity Description)] /by (Day/Date/Time) | deadline return book /by Sunday |
+| Delete | delete (Activity Index) | delete 3 |
+| Done | done (Activity Index) | done 5 |
+| Event | event (Activity Description)) /at (Day/Date/Time) | event project meeting /at Mon 2-4pm |
+| Find| find (Keyword) | find book |
+| List | list | list |
+| Todo | todo (Activity Description) | todo borrow book |
